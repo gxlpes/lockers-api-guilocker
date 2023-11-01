@@ -1,0 +1,14 @@
+version: '3'
+services:
+  guilocker-lockers-db:
+    image: postgres:latest
+    container_name: guilocker-lockers-db
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - guilocker-lockers-volume:/var/lib/postgresql/data
+
+volumes:
+  guilocker-lockers-volume:
